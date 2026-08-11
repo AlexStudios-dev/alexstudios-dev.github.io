@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cardbox — what you get</title>
+<style>
+  :root{
+    --ink:#1F2430; --muted:#5B6270; --accent:#6C5CE7; --accent-2:#4B3DC4;
+    --line:#E3E6ED; --surface:#F7F7FB; --card:#fff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--ink); background:#fff;
+    font:16px/1.65 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:0 20px}
+
+  /* ---------- hero ---------- */
+  header{
+    background:linear-gradient(135deg,var(--accent-2),var(--accent));
+    color:#fff; padding:64px 0 56px; text-align:center;
+  }
+  header h1{font-size:52px; margin:0 0 10px; letter-spacing:-.03em}
+  header .tag{font-size:21px; margin:0 auto 26px; max-width:26ch; opacity:.93}
+  .pills{display:flex; gap:9px; justify-content:center; flex-wrap:wrap; margin-bottom:30px}
+  .pill{
+    border:1.5px solid rgba(255,255,255,.55); border-radius:999px;
+    padding:5px 15px; font-size:14px; font-weight:600;
+  }
+  .buy{
+    display:inline-block; background:#fff; color:var(--accent-2); font-weight:700;
+    border-radius:999px; padding:13px 30px; text-decoration:none; font-size:16px;
+  }
+  .buy small{display:block; font-weight:500; opacity:.62; font-size:12.5px; margin-top:2px}
+
+  /* ---------- sections ---------- */
+  section{padding:52px 0; border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:0}
+  h2{font-size:26px; margin:0 0 8px; letter-spacing:-.02em}
+  .lede{color:var(--muted); margin:0 0 26px; font-size:17px}
+  h3{font-size:16px; margin:26px 0 6px}
+  ul{padding-left:20px; margin:8px 0}
+  li{margin:6px 0}
+  p{margin:12px 0}
+
+  /* ---------- phone frames ---------- */
+  .shots{display:flex; gap:20px; justify-content:center; flex-wrap:wrap}
+  .shot{width:206px}
+  .phone{
+    aspect-ratio:9/16; border-radius:26px; overflow:hidden;
+    border:1px solid var(--line); background:var(--surface);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .phone img{width:100%; height:100%; object-fit:cover; display:block}
+  /* PLACEHOLDER — delete .empty and drop an <img> inside .phone when the shots exist */
+  .empty{
+    border:2px dashed #C9C6E8; background:#F4F3FE; color:#8C86B8;
+    font-size:13px; text-align:center; padding:0 18px; line-height:1.5;
+  }
+  .shot .cap{font-size:14px; color:var(--muted); text-align:center; margin-top:10px}
+
+  /* ---------- callouts ---------- */
+  .note{
+    background:var(--surface); border-left:3px solid var(--accent);
+    border-radius:0 10px 10px 0; padding:14px 18px; margin:22px 0;
+  }
+  .note p{margin:0}
+  .faq{margin-top:8px}
+  .faq dt{font-weight:600; margin-top:18px}
+  .faq dd{margin:4px 0 0; color:var(--muted)}
+  /* single-column feature rows */
+  .feature{display:flex; gap:18px; align-items:flex-start; padding:22px 0; border-top:1px solid var(--line)}
+  .feature:first-of-type{border-top:0; padding-top:4px}
+  .ficon{
+    flex:0 0 46px; width:46px; height:46px; border-radius:14px; background:#F1EFFE;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .ficon svg{width:25px; height:25px; fill:var(--accent)}
+  .feature h3{margin:4px 0 2px; font-size:17px}
+  .feature ul{margin:6px 0 0}
+  @media (max-width:620px){ header h1{font-size:40px} }
+
+  footer{
+    padding:34px 0 60px; color:var(--muted); font-size:14px; text-align:center;
+  }
+  a{color:var(--accent)}
+
+  @media (prefers-color-scheme:dark){
+    :root{--ink:#E8EAF0; --muted:#9AA1B1; --line:#2A2D37; --surface:#1B1E25; --card:#15171C}
+    body{background:#15171C}
+    .ficon{background:#232634}
+    .ficon svg{fill:#A79BFF}
+    .empty{background:#20222C; border-color:#3A3660; color:#9A93C8}
+    .buy{background:#fff; color:var(--accent-2)}
+    a{color:#A79BFF}
+  }
+</style>
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta property="og:title" content="Cardbox — what you get">
+<meta property="og:description" content="What you get: the screens, everything you can change, and what it deliberately does not do.">
+<meta property="og:image" content="icon.png">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Cardbox</h1>
+    <p class="tag">Flashcards you shape to fit how you study.</p>
+    <div class="pills">
+      <span class="pill">Offline</span>
+      <span class="pill">No account</span>
+      <span class="pill">No ads</span>
+      <span class="pill">One purchase</span>
+    </div>
+    <a class="buy" href="#">Get it on Google Play<small>coming soon</small></a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <h2>The idea</h2>
+    <p>
+      Most flashcard apps have already decided things for you: the order the cards come in, what
+      the grading buttons say, what the whole thing looks like. Cardbox hands those decisions back.
+    </p>
+    <p>
+      You do not have to use any of it. The defaults work from the first launch, and everything
+      below is there for the moment you find yourself wishing the app did something differently.
+    </p>
+  </section>
+
+  <section>
+    <h2>What it looks like</h2>
+    <p class="lede">Three screens, and what each one lets you change.</p>
+    <div class="shots">
+      <div class="shot">
+        <div class="phone empty">screenshot:<br>studying a card</div>
+        <p class="cap">Study, with the grading buttons you defined</p>
+      </div>
+      <div class="shot">
+        <div class="phone empty">screenshot:<br>grading buttons</div>
+        <p class="cap">Rename, add or remove the buttons themselves</p>
+      </div>
+      <div class="shot">
+        <div class="phone empty">screenshot:<br>appearance</div>
+        <p class="cap">Palettes, styles, fonts, roundness, text size</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What you can change</h2>
+
+    <div class="feature">
+      <div class="ficon" aria-hidden="true">
+        <!-- three grading buttons -->
+        <svg viewBox="0 0 24 24"><rect x="1" y="9" width="6.4" height="6" rx="2"/><rect x="8.8" y="9" width="6.4" height="6" rx="2" opacity=".62"/><rect x="16.6" y="9" width="6.4" height="6" rx="2" opacity=".34"/></svg>
+      </div>
+      <div>
+        <h3>The grading buttons</h3>
+        <ul>
+          <li>Rename them, add them, remove them</li>
+          <li>Decide what each one does to a card&rsquo;s schedule</li>
+          <li>One button is a valid setup, if that is how you think</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="ficon" aria-hidden="true">
+        <!-- cards -->
+        <svg viewBox="0 0 24 24"><rect x="2.4" y="5" width="12" height="15.6" rx="2.6" opacity=".38"/><rect x="8" y="2.6" width="13.6" height="17.4" rx="2.8"/></svg>
+      </div>
+      <div>
+        <h3>The cards</h3>
+        <ul>
+          <li>A front, a back, an optional hint, and images on either side</li>
+          <li>Plain word cards, or fill-in-the-blank sentences</li>
+          <li>Read a card aloud with your phone&rsquo;s own voice, per card</li>
+          <li>Hold and drag to reorder</li>
+          <li>Park a card with a switch &mdash; it stays in the deck and keeps its progress, but
+              stops turning up while you study</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="ficon" aria-hidden="true">
+        <!-- clock -->
+        <svg viewBox="0 0 24 24"><path d="M12 1.8a10.2 10.2 0 1 0 0 20.4 10.2 10.2 0 0 0 0-20.4zm0 3.9a1.3 1.3 0 0 1 1.3 1.3v4.47l3.02 1.74a1.3 1.3 0 1 1-1.3 2.25l-3.67-2.12a1.3 1.3 0 0 1-.65-1.13V7a1.3 1.3 0 0 1 1.3-1.3z"/></svg>
+      </div>
+      <div>
+        <h3>Reminders</h3>
+        <ul>
+          <li>A fixed time, on the weekdays you pick</li>
+          <li>Or a random one: your own list of messages, one chosen at random, at a random
+              moment inside an hour window you set</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="ficon" aria-hidden="true">
+        <!-- palette -->
+        <svg viewBox="0 0 24 24"><path d="M12 2.2c-5.5 0-9.9 4.1-9.9 9.4 0 5.2 4 9.2 9.2 9.2 1.6 0 2.7-1 2.7-2.3 0-.6-.2-1.1-.6-1.5-.3-.4-.5-.8-.5-1.3 0-1 .9-1.9 2-1.9h1.5c2.5 0 4.5-2 4.5-4.5 0-3.9-4-7.1-8.9-7.1zM6.6 12.9a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4zm2.9-4.4a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4zm5 0a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4zm3.4 3.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4z"/></svg>
+      </div>
+      <div>
+        <h3>The way it looks</h3>
+        <ul>
+          <li>Colour palettes, including ones you build yourself</li>
+          <li>Light and dark, and two visual styles</li>
+          <li>Font, corner roundness, text size, text weight</li>
+          <li>High contrast and reduced motion</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="ficon" aria-hidden="true">
+        <!-- bars -->
+        <svg viewBox="0 0 24 24"><rect x="2.6" y="13.4" width="4.8" height="8" rx="1.8" opacity=".45"/><rect x="9.6" y="8.2" width="4.8" height="13.2" rx="1.8" opacity=".72"/><rect x="16.6" y="2.6" width="4.8" height="18.8" rx="1.8"/></svg>
+      </div>
+      <div>
+        <h3>What you count</h3>
+        <ul>
+          <li>Daily goal, streak, cards due, cards studied, recall rate, cards mastered</li>
+          <li>Every one of those can be hidden. No leaderboards, no social feed.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What it does not do</h2>
+    <p class="lede">The things worth knowing before you pay, not after.</p>
+    <ul>
+      <li><strong>No sync between devices.</strong> Moving a deck to another phone means a CSV
+          export, a backup file, or a deck code you paste into a message.</li>
+      <li><strong>Phones only, in portrait.</strong> It runs on a tablet, but it was not designed
+          for one.</li>
+      <li><strong>No shared deck library.</strong> There is no marketplace of decks to download.
+          You write your own, import a CSV, or paste in a code someone sent you.</li>
+      <li><strong>No account, so no recovery.</strong> Nothing is stored anywhere but your phone.
+          Take backups.</li>
+    </ul>
+    <div class="note">
+      <p>
+        Everything on this list is deliberate. Each one is a thing the app would need a server and
+        an account for &mdash; and neither of those exist.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Questions</h2>
+    <dl class="faq">
+      <dt>Does it need an internet connection?</dt>
+      <dd>No. It works in airplane mode from the first launch onwards, permanently.</dd>
+
+      <dt>Is there a subscription, or anything to unlock later?</dt>
+      <dd>No. One purchase, and that is all of it. No advertising and no in-app purchases.</dd>
+
+      <dt>Does it do spaced repetition?</dt>
+      <dd>Yes &mdash; both Leitner and SM-2, if you want them. They sit alongside nine simpler
+          orders, so you can also just shuffle, or drill your worst cards first, and never think
+          about scheduling at all.</dd>
+
+      <dt>Can I bring decks I already have?</dt>
+      <dd>Yes, as CSV. You can export the same way, and send a whole deck as a short text code in
+          any message.</dd>
+
+      <dt>What does it collect about me?</dt>
+      <dd>Nothing. Not as a setting you have to hunt for &mdash; there is nothing in the app that
+          collects anything, and no server for it to be sent to.</dd>
+
+      <dt>Who made it?</dt>
+      <dd>One person. I am Czech and I am learning German, and every option in Cardbox is there
+          because I wanted it for my own five decks. If something is broken or missing, write to
+          me and you will get a reply from the person who wrote the code.</dd>
+    </dl>
+  </section>
+
+</div>
+
+<footer>
+  <p>
+    <a href="index.html">Home</a> &middot;
+    <a href="privacy.html">Privacy policy</a> &middot;
+    <a href="mailto:alexstudios.dev@gmail.com">alexstudios.dev@gmail.com</a>
+  </p>
+  <p>Made by AlexStudios.</p>
+</footer>
+
+</body>
+</html>
