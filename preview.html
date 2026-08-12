@@ -46,8 +46,10 @@
   p{margin:12px 0}
 
   /* ---------- phone frames ---------- */
-  .shots{display:flex; gap:20px; justify-content:center; flex-wrap:wrap}
-  .shot{width:206px}
+  /* All four on ONE row: the wrap is 760px with 20px padding = 720px of content, so four shots
+     plus three 14px gaps have to come in under that. Still wraps on a narrow phone. */
+  .shots{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+  .shot{width:168px}
   .phone{
     aspect-ratio:9/16; border-radius:26px; overflow:hidden;
     border:1px solid var(--line); background:var(--surface);
